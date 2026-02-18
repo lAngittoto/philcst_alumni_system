@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Block private folders
+    RewriteRule ^(app|config|routes|helpers|includes)(/.*)?$ - [F,L]
+
+    # Rewrite clean URLs for public routes
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ /philcst-alumni-system/public/index.php?page=$1 [QSA,L]
+
+</IfModule>
