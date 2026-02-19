@@ -6,7 +6,7 @@ if ($page === '') {
     exit;
 }
 
-$publicPages = ['home', 'log-in', 'authenticate'];
+$publicPages = ['home', 'about', 'log-in', 'authenticate'];
 $admin = [''];
 
 if (in_array($page, $publicPages)) {
@@ -15,6 +15,9 @@ if (in_array($page, $publicPages)) {
 
         case 'home':
             include __DIR__ . '/../auth/views/home.php';
+            break;
+        case 'about':
+            include __DIR__ . '/../auth/views/about.php';
             break;
         case 'authenticate':
             include __DIR__. '/../auth/controllers/authenticate-controller.php';
