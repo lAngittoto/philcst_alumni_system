@@ -6,9 +6,9 @@ if ($page === '') {
     exit;
 }
 
-$publicPages = ['home', 'about', 'log-in', 'authenticate'];
-$admin = [''];
-
+$publicPages = ['home', 'about', 'login',];
+$admin       = ['dashboard'];
+$organizer   = [''];
 if (in_array($page, $publicPages)) {
     
     switch ($page) {
@@ -19,12 +19,10 @@ if (in_array($page, $publicPages)) {
         case 'about':
             include __DIR__ . '/../auth/views/about.php';
             break;
-        case 'authenticate':
-            include __DIR__. '/../auth/controllers/authenticate-controller.php';
-            break;
-        case 'log-in':
-            include __DIR__. '/../auth/views/log-in.php';
-            break;
+        case 'login':
+            include __DIR__. '/../auth/views/login.php';
+
+
     }
 } elseif (in_array($page, $admin)) {
     require_once __DIR__ . '/admin.php';
