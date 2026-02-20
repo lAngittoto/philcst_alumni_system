@@ -17,6 +17,14 @@ $courses = [
     ["title" => "Bachelor of Science in Computer Engineering", "desc" => "Combines electronics and computing systems for hardware and software solutions."],
     ["title" => "Bachelor of Science in Computer Science", "desc" => "Focuses on programming, algorithms, software development, and computing theory."]
 ];
+
+// Anime Profile Data for Deans
+$deans = [
+    ["name" => "Dean Uzumaki", "role" => "College of Technology", "img" => "https://i.pinimg.com/736x/8e/f4/13/8ef413009d6c70876174a74653303f0b.jpg"],
+    ["name" => "Dean Uchiha", "role" => "College of Engineering", "img" => "https://i.pinimg.com/736x/0a/16/8b/0a168b556942942485a383d47f9f7a9a.jpg"],
+    ["name" => "Dean Ackerman", "role" => "College of Arts & Sciences", "img" => "https://i.pinimg.com/736x/7b/03/48/7b034870197262c2f7034b7f9407137f.jpg"],
+    ["name" => "Dean Rengoku", "role" => "College of Education", "img" => "https://i.pinimg.com/736x/d6/33/88/d633887c268a78627e7f694e99f132e4.jpg"]
+];
 ?>
 
 <link rel="stylesheet" href="../public/assets/css/aos.css">
@@ -34,18 +42,37 @@ $courses = [
     }
     /* Vertical Line Style */
     .mission-line {
+        opacity: 0;
         width: 4px;
         height: 100px;
         background: linear-gradient(to bottom, #7a3f91, transparent);
         margin: 40px auto;
         border-radius: 2px;
     }
+
+    /* Scroll Snap Gallery for Deans */
+    .dean-gallery {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 20px;
+        padding-bottom: 30px;
+        scrollbar-width: none; /* Hide scrollbar Firefox */
+    }
+    .dean-gallery::-webkit-scrollbar {
+        display: none; /* Hide scrollbar Chrome/Safari */
+    }
+    .dean-card {
+        scroll-snap-align: center;
+        flex: 0 0 100%;
+        max-width: 400px;
+    }
 </style>
 
 <main class="pt-24 pb-20 px-6 max-w-7xl mx-auto font-sans antialiased text-[#2b0d3e]">
 
-    <header class="w-full mb-16 text-center">
-        <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter">
+    <header class="w-full mb-35 text-center">
+        <h1 class="text-5xl md:text-6xl font-black uppercase tracking-tighter">
             About <span class="text-[#7a3f91]">PHILCST</span>
         </h1>
         <div class="w-24 h-1.5 bg-[#c59dd9] mx-auto mt-4 rounded-full"></div>
@@ -60,13 +87,10 @@ $courses = [
                 </figcaption>
             </figure>
         </div>
-
         <div class="mission-line" aria-hidden="true"></div>
-        
-        </div>
     </section>
 
-    <section class="grid lg:grid-cols-2 gap-16 items-start  mb-48">
+    <section class="grid lg:grid-cols-2 gap-16 items-start mb-48">
         <article class="space-y-8" data-aos="fade-up" data-aos-duration="1000">
             <div class="bg-white/90 backdrop-blur-sm p-10 rounded-[2.5rem] border border-white shadow-xl">
                 <h3 class="text-2xl font-black uppercase text-[#7a3f91] mb-6 tracking-tight flex items-center gap-3">
@@ -102,6 +126,34 @@ $courses = [
                 <img src="assets/images/school-1.jpg" alt="Facilities" class="w-full h-[320px] object-cover">
             </div>
         </aside>
+    </section>
+
+    <section class="mb-48 overflow-hidden" data-aos="fade-up">
+        <div class="flex items-center justify-between mb-10">
+            <h3 class="text-3xl font-black uppercase tracking-tighter">Academic <span class="text-[#7a3f91]">Deans</span></h3>
+            <div class="flex gap-2 text-[#7a3f91] font-bold text-xs uppercase">
+
+            </div>
+        </div>
+
+        <div class="dean-gallery px-4">
+            <?php foreach ($deans as $dean): ?>
+            <div class="dean-card bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-xl text-center group transition-all hover:border-[#7a3f91]">
+                <div class="w-48 h-48 mx-auto mb-6 rounded-[2rem] overflow-hidden border-[6px] border-[#f2eaf7] group-hover:border-[#7a3f91] transition-all">
+                    <img src="<?= $dean['img'] ?>" alt="<?= $dean['name'] ?>" class="w-full h-full object-cover">
+                </div>
+                <h4 class="text-xl font-black text-[#2b0d3e] uppercase"><?= $dean['name'] ?></h4>
+                <p class="text-[#7a3f91] font-bold uppercase tracking-widest text-[10px] mt-1"><?= $dean['role'] ?></p>
+            </div>
+            <?php endforeach; ?>
+        </div>
+        
+        <div class="flex justify-center gap-3 mt-6">
+            <div class="w-8 h-1 bg-[#7a3f91] rounded-full"></div>
+            <div class="w-8 h-1 bg-[#c59dd9] rounded-full opacity-30"></div>
+            <div class="w-8 h-1 bg-[#c59dd9] rounded-full opacity-30"></div>
+            <div class="w-8 h-1 bg-[#c59dd9] rounded-full opacity-30"></div>
+        </div>
     </section>
 
     <section class="border-t-2 border-gray-100 pt-20 mb-20">

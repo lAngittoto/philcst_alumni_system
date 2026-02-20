@@ -6,8 +6,8 @@ if ($page === '') {
     exit;
 }
 
-$publicPages = ['home', 'about', 'login',];
-$admin       = ['dashboard'];
+$publicPages = ['home', 'about', 'news', 'login',];
+$admin       = ['dashboard', 'audit-logs'];
 $organizer   = [''];
 if (in_array($page, $publicPages)) {
     
@@ -19,8 +19,13 @@ if (in_array($page, $publicPages)) {
         case 'about':
             include __DIR__ . '/../auth/views/about.php';
             break;
+        case 'news':
+            include __DIR__. '/../auth/views/news.php';
+            break;
         case 'login':
             include __DIR__. '/../auth/views/login.php';
+            break;
+
 
 
     }

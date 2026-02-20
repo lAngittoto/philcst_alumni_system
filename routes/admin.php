@@ -14,7 +14,10 @@ $page = $_GET['page'] ?? 'dashboard';
 
 switch ($page) {
     case 'dashboard':
-        include __DIR__.'/../app/admin/controllers/AdminController.php';
+        include __DIR__.'/../app/admin/controllers/DashboardController.php';
+        break;
+    case 'audit-logs':
+        include __DIR__.'/../app/admin/controllers/AuditController.php';
         break;
 
     default:

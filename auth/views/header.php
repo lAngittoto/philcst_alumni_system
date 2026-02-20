@@ -10,6 +10,7 @@
         <div class="hidden md:flex items-center space-x-8 font-bold text-xs uppercase tracking-widest text-[#2b0d3e]">
             <a href="home" class="hover:text-[#7a3f91] transition-all">Home</a>
             <a href="about" class="hover:text-[#7a3f91] transition-all">About</a>
+            <a href="news" class="hover:text-[#7a3f91] transition-all">News</a>
             <a href="login" class="px-8 py-2 bg-[#2b0d3e] text-white rounded hover:bg-[#7a3f91] transition-all transform">Login</a>
         </div>
 
@@ -21,6 +22,7 @@
     <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#f2eaf7] shadow-2xl p-6 flex flex-col space-y-4 md:hidden border-t border-[#c59dd9]/20">
         <a href="home" class="text-[#2b0d3e] font-bold uppercase text-sm">Home</a>
         <a href="about" class="text-[#2b0d3e] font-bold uppercase text-sm">About</a>
+        <a href="news" class="text-[#2b0d3e] font-bold uppercase text-sm">News</a>
         <a href="login" class="text-[#2b0d3e] font-bold uppercase text-sm">Login</a>
     </div>
 </nav>

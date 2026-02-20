@@ -41,9 +41,6 @@ ob_start();
             </div>
         </section>
 
-        <div class="py-5">
-            <div class="flow-line"></div>
-        </div>
 
         <section class="py-15 px-6 max-w-7xl mx-auto">
             <div class="text-center mb-20" data-aos="fade-up">
@@ -80,10 +77,6 @@ ob_start();
             </div>
         </section>
 
-        <div class="py-10">
-            <div class="flow-line"></div>
-        </div>
-
         <script src="/philcst-alumni-system/public/assets/js/aos.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
@@ -97,7 +90,7 @@ ob_start();
     </main>
 
     <footer class="bg-[#2b0d3e] text-white pt-20 pb-10 px-6">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 border-b border-white/10 pb-12 mb-10 text-center md:text-left">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 border-b border-white/10 pb-12 mb-20 text-center md:text-left">
             <div class="space-y-4">
                 <h3 class="text-2xl font-black text-[#c59dd9] uppercase italic">PHILCST Alumni Connect</h3>
                 <p class="text-sm text-white/70 italic uppercase">Empowering alumni through technology.</p>

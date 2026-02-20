@@ -5,7 +5,8 @@
     "autoload": {
         "psr-4": {
             "Config\\": "config/",
-            "Auth\\": "auth/"
+            "Auth\\": "auth/",
+            "Admin\\": "app/admin/"
         }
     }
 }
